@@ -44,7 +44,7 @@ export default new Vuex.Store({
     makeLike({ commit, state, dispatch }, id) {
       let poster = state.shows.find((s) => s.id == id)
       let payload = {
-        email: 'loquesea@gmail.com',
+        email: 'usuario@gmail.com',
         favoritos: {
           postersFavoritos: [
             poster

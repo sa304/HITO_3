@@ -1,14 +1,11 @@
 <template>
   <div class="home" id="home">
     <div class="container">
-      <Navbar />
-      <!--llama al componente-->
-      <b-alert class="pt-3 mx-auto" show>Estás en: Peliculas Recomendadas</b-alert>
+
 
       <div class="row mx-auto">
         <!--ordenado para firestore-->
         <Show
-          class="fondo"
           v-for="(show, index) in shows"
           :key="index"
           :id="show.id"
@@ -27,7 +24,7 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
+import Header from "@/components/Header.vue";
 import Show from "@/components/Show.vue";
 import Footer from "@/components/Footer.vue"; /*no borrar*/
 import axios from "axios";
@@ -46,7 +43,7 @@ export default {
   created() {
     if (this.shows.length === 0) {
       axios.get("http://api.tvmaze.com/shows").then(data => {
-        data.data.length = 20;
+        data.data.length = 16;
         let shows = [];
         data.data.forEach(s => {
           shows.push({
@@ -64,7 +61,7 @@ export default {
   },
   components: {
     Show,
-    Navbar,
+    Header,
     Footer
   }
 };
@@ -74,19 +71,9 @@ export default {
 #home {
   background-image: url('../assets/fondo.webp');
   text-align: justify;
-}
-#nav {
-  padding: 30px;
-  #a {
-    font-weight: bold;
-    color: #fff;
-    #router-link {
-      color: #000;
-    }
-  }
+  background-repeat: no-repeat;
 }
 
-.fondo {
-  background: red;
-}
+
+
 </style>

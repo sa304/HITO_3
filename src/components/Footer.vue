@@ -1,22 +1,6 @@
 <template>
   <div>
-
-    <!--div class="list-group">
-      <a href="#" class="list-group-item">First item</a>
-      <a href="#" class="list-group-item">Second item</a>
-      <a href="#" class="list-group-item">Third item</a>
-    </div-->
-
-    <!--div class="container">
-      <div class="jumbotron">
-        <h1>Bootstrap Tutorial</h1>
-        <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.</p>
-      </div>
-      <p>This is some text.</p>
-      <p>This is another text.</p>
-    </div-->
-
-    <footer class="pie page-footer stylish-color-dark pt-5 bg-success">
+    <footer class="jumbotron page-footer stylish-color-dark pt-5 bg-success">
       <div class="container text-center text-md-left">
         <div class="row">
           <div class="col-4 mx-auto text-center">
@@ -27,9 +11,14 @@
           </div>
           <div class="col-4 mx-auto text-center">
             <h5 class="mt-1">Agradecimientos</h5>
-            <p
-              class="text-justify"
-            >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam repudiandae et modi perferendis. Ipsa, quaerat voluptates. Dignissimos nostrum earum fuga eaque ea nulla atque aut, possimus nesciunt? Velit, ullam iste.</p>
+
+            <pre>
+Text in a pre element
+is displayed in a fixed-width
+font, and it preserves
+both      spaces and
+line breaks.
+</pre>
 
             <label for="rating-inline">Califica las Series:</label>
             <b-form-rating id="rating-inline" inline value="1"></b-form-rating>
@@ -37,9 +26,19 @@
         </div>
       </div>
       <hr />
-        <h1 class="letras">LABERINTO TV</h1>
+      <h1 class="subtitulo">LABERINTO TV</h1>
+
+
+<div class="box">
+<img src="../assets/facebook.png" alt="facebook">
+<img src="../assets/instagram.png" alt="instagram">
+<img src="../assets/youtube.png" alt="youtube">
+</div>
+
+
+
       <div class="footer-copyright text-center py-3">
-        2020 | Laberinto TV |
+        2020 | hecho con dedicación |
         <a href="#">Proximamente</a>
       </div>
     </footer>
@@ -53,16 +52,32 @@ export default {
 </script>
 
 <style>
-
-.letras{
-  font-family: 'Creepster', cursive;
-  color: rgba(113, 240, 9, 0.932);
+.subtitulo {
+  font-family: "Creepster", cursive;
+  color: rgb(15, 132, 179);
   text-align: center;
+ 
 }
 
-.body{
-  background-image: url('../assets/fondo.webp');
+.body {
+  background-image: url("../assets/fondo.webp");
 }
 
+.jumbotron {
+margin-bottom: 0px;
+
+color: white;
+text-shadow: black 0.3em 0.3em 0.3em;
+background: black;
+}
+
+.box {
+  display: inline-flex;
+  flex-wrap: no-wrap;
+  align-content: center;
+  align-items: center;
+  height: 10%;
+  width: 10%;
+}
 
 </style>
