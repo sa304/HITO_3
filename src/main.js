@@ -10,13 +10,14 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
  Firebase.initializeApp({ //colocar mi token
-  apiKey: "AIzaSyCMeeIaynz9z2YuxyawDqOIQC7cr17M9mE",
-  authDomain: "apirest-808ed.firebaseapp.com",
-  databaseURL: "https://apirest-808ed.firebaseio.com",
-  projectId: "apirest-808ed",
-  storageBucket: "apirest-808ed.appspot.com",
-  messagingSenderId: "524805307070",
-  appId: "1:524805307070:web:a510ee49feddfef0013cef"
+    apiKey: "AIzaSyAYnggbIXYy-1xDSqu3NnyugbZu_yF8U4M",
+    authDomain: "pacientes-4d4bb.firebaseapp.com",
+    databaseURL: "https://pacientes-4d4bb.firebaseio.com",
+    projectId: "pacientes-4d4bb",
+    storageBucket: "pacientes-4d4bb.appspot.com",
+    messagingSenderId: "3196556956",
+    appId: "1:3196556956:web:1174959ba64108d3bfff59"
+
 })
 Vue.use(AxiosPlugin)
 

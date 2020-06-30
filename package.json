@@ -7,11 +7,15 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "affix": "^1.0.15",
     "axios": "^0.19.2",
     "bootstrap-vue": "^2.15.0",
     "core-js": "^3.6.5",
     "firebase": "^7.15.5",
     "firebase-tools": "^8.4.3",
+    "jquery": "^3.5.1",
+    "popover": "^2.4.1",
+    "popper": "^1.0.1",
     "vue": "^2.6.11",
     "vue-axios-cors": "^1.0.1",
     "vue-router": "^3.2.0",

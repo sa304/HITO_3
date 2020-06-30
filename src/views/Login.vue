@@ -1,15 +1,56 @@
 <template>
-  <div class="container mt-5">
-    <h1 class="text-center text-white pt-5">Sing in</h1>
-    <b-input class="mt-5 text-center " type="text" v-model="email" placeholder="usuario@gmail.com"></b-input>
+  <div class="container pt-5 pb-5">
+    <div class="mb-2">
+    <b-avatar class="avatar" src="https://placekitten.com/150/150"></b-avatar>
+    </div>
+        <h1 class="text-center text-white pt-5">Sing in</h1>
+        <b-input class="mt-5 text-center " type="text" v-model="email" placeholder="usuario@gmail.com"></b-input>
     <b-input class="mt-3 text-center" type="text" v-model="password" placeholder="123456"></b-input>
-
-    <b-button @click="login" block variant="primary" class="mt-3">Sign in</b-button>
-    <b-button @click="quienSoy" block variant="primary" class="mt-3">Forgot password?</b-button>
-    <b-button @click="logout" block variant="primary" class="mt-3 mb-5">Don't have acount? Sign up</b-button>
-    <br />
+<b-button @click="login" block variant="primary" class="mt-3">Sign in</b-button>
+<b-button @click="quienSoy" block variant="primary" class="mt-3 mb-5">quienSoy</b-button>
+<br>
   </div>
 </template>
+
+<script>
+import Firebase from 'firebase'
+export default {
+  name:'Login',
+  data() {
+    return {
+      email:'',
+      password:''
+
+    }
+  },
+  methods: {
+    login(){
+      Firebase.auth()
+      .signInWithEmailAndPassword(this.email, this.password)
+      .then(
+        accept =>{
+          alert('fuiste logeado, revisa la consola');
+          this.quienSoy;
+          this.$router.push({name:'Home'});
+        },
+        reject=>{
+          alert('no estas registrado')
+          console.log(reject.message);
+        }
+      )
+    }, 
+
+    quienSoy(){
+      let currentUser = Firebase.auth().currentUser
+      console.log(currentUser) 
+    }
+  }
+
+}
+</script>
+
+
+
 
 <style lang="scss" scope>
 #app {
@@ -31,36 +72,7 @@
 }
 </style>
 
-<!--script>
-import Firebase from 'firebase'​
-export default {
-  name: 'App',
-  data() {
-    return {
-      email: '',
-      password:' '
-    }
-  },
-  methods:{
-    login(){
-      Firebase.auth().signInWithEmailAndPassword(this.email, this.password).then (
-        accept => {
-          alert('Fuiste logeado! revisa la consola')
-          this.quienSoy
-        },
-        reject => {
-          alert('No mi hermano, usted no existe')
-          console.log(reject.message)
-        }
-      )
-    },
-    logout(){
-      Firebase.auth().signOut()
-    },
-    quienSoy(){
-      let currentUser = Firebase.auth().currentUser
-      console.log(currentUser)
-    }
-  }
-}
-</script-->
+
+
+
+

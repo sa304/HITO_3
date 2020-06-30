@@ -11,40 +11,6 @@
   </div>
 </template>
 
-<!--script>
-import Firebase from 'firebase'​
-export default {
-  name: 'App',
-  data() {
-    return {
-      email: '',
-      password:' '
-    }
-  },
-  methods:{
-    login(){
-      Firebase.auth().signInWithEmailAndPassword(this.email, this.password).then (
-        accept => {
-          alert('Fuiste logeado! revisa la consola')
-          this.quienSoy
-        },
-        reject => {
-          alert('No mi hermano, usted no existe')
-          console.log(reject.message)
-        }
-      )
-    },
-    logout(){
-      Firebase.auth().signOut()
-    },
-    quienSoy(){
-      let currentUser = Firebase.auth().currentUser
-      console.log(currentUser)
-    }
-  }
-}
-</script-->
-
 <style lang="scss">
 #app {
   font-family: Helvetica;

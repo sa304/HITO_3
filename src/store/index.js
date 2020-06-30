@@ -1,9 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-// import createPersistedState from 'vuex-persistedstate'
 
 Vue.use(Vuex)
+
+/*persistencia
+import createPersistedState from 'vuex-persistedstate'
+const store = new Vuex.Store({
+  plugins: [createPersistedState()],
+});
+persistencia*/
 
 export default new Vuex.Store({
   state: {
@@ -55,5 +61,4 @@ export default new Vuex.Store({
     },
   },
   modules: {},
-  // plugins: [createPersistedState()],
 })

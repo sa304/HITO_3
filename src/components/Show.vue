@@ -1,5 +1,6 @@
 <template>
   <div class="col-12 col-sm-4 col-md-3 p-3"><!--agregar mas pantallas-->
+
     <div class="card bg-dark" style="width: 100%;">
       <h5 class="card-title text-center pt-3">{{name}}</h5>
       <img :src="img" class="card-img-top px-4" alt="..." />
@@ -17,6 +18,7 @@
           </b-button>
       </div>
     </div>
+
   </div>
 </template>
 
