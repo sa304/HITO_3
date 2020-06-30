@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
+
+      <h1 class="letras">LABERINTO TV</h1>
+
        <router-link class="btn-sm btn-success" to="/">Login</router-link> |
   <router-link class="btn-sm btn-success" to="/home">Home</router-link> |
    <router-link class="btn-sm btn-success" to="/favoritos">Favoritos</router-link> | 
@@ -27,5 +30,10 @@
       color: #fff;
     }
   }
+}
+
+.letras{
+  font-family: 'Creepster', cursive;
+  color: rgba(113, 240, 9, 0.932)
 }
 </style>

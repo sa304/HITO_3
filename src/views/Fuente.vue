@@ -1,5 +1,9 @@
 <template>
-  <div id="fuente">
+  <div class="fuente container">
+
+<b-alert class="pt-3 mx-auto" show>Estás en: Fuente</b-alert>
+
+
     <!--importa componente-->
 <div class="container text-justify">
   <div class="row">

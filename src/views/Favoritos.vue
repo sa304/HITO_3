@@ -4,7 +4,6 @@
   <Navbar /><!--llama al componente-->
 <b-alert class="pt-3 mx-auto" show>Estás en: Favoritos</b-alert>
 
-
    <div class="container">
       <h2>Table</h2>
       <p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p>
@@ -34,9 +33,6 @@
       </div>
     </div>
 
- 
-
-    
     <b-table class="table">
       <thead>
         <tr>
@@ -59,8 +55,6 @@
         </tr>
       </tbody>
     </b-table>
-
-
 
  <Footer /><!--llama al componente-->
 

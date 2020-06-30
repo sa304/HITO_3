@@ -4,7 +4,7 @@
     <b-avatar class="avatar" src="https://placekitten.com/150/150"></b-avatar>
     </div>
         <h1 class="text-center text-white pt-5">Sing in</h1>
-        <b-input class="mt-5 text-center " type="text" v-model="email" placeholder="usuario@gmail.com"></b-input>
+        <b-input class="mt-5 text-center " type="text" v-model="email" placeholder="usuario@gmail.com o user@mail.cl"></b-input>
     <b-input class="mt-3 text-center" type="text" v-model="password" placeholder="123456"></b-input>
 <b-button @click="login" block variant="primary" class="mt-3">Sign in</b-button>
 <b-button @click="quienSoy" block variant="primary" class="mt-3 mb-5">quienSoy</b-button>
@@ -49,16 +49,13 @@ export default {
 }
 </script>
 
-
-
-
 <style lang="scss" scope>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background: #5eb0c5;
+  background-image: url('../assets/fondo.webp');
 }
 ​ #nav {
   padding: 30px;

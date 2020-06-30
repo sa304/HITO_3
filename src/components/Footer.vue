@@ -37,6 +37,7 @@
         </div>
       </div>
       <hr />
+        <h1 class="letras">LABERINTO TV</h1>
       <div class="footer-copyright text-center py-3">
         2020 | Laberinto TV |
         <a href="#">Proximamente</a>
@@ -52,4 +53,16 @@ export default {
 </script>
 
 <style>
+
+.letras{
+  font-family: 'Creepster', cursive;
+  color: rgba(113, 240, 9, 0.932);
+  text-align: center;
+}
+
+.body{
+  background-image: url('../assets/fondo.webp');
+}
+
+
 </style>

@@ -44,7 +44,7 @@ export default {
   created() {
     if (this.shows.length === 0) {
       axios.get("http://api.tvmaze.com/shows").then(data => {
-        data.data.length = 12;
+        data.data.length = 20;
         let shows = [];
         data.data.forEach(s => {
           shows.push({
@@ -85,7 +85,7 @@ export default {
 
 <style lang="scss" scope>
 #home {
-  background: #d18a07;
+  background-image: url('../assets/fondo.webp');
   text-align: justify;
 }
 #nav {
