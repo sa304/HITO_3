@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-
+import Firebase from 'firebase'
 Vue.use(Vuex)
 
 /*persistencia
@@ -42,15 +42,27 @@ export default new Vuex.Store({
       commit('SET_FAVS', favs)
     },
     makeLike({ commit, state, dispatch }, id) {
-      let payload = state.shows.find((s) => s.id == id)
+      let poster = state.shows.find((s) => s.id == id)
+      let payload = {
+        email: 'loquesea@gmail.com',
+        favoritos: {
+          postersFavoritos: [
+            poster
+          ]
+        }
+      };
+      axios.post('https://us-central1-pacientes-4d4bb.cloudfunctions.net/usuarios/usuario', payload).then((data) => {
+        console.log(data)
+      })
+      /*let payload = state.shows.find((s) => s.id == id)
       payload.like
         ? dispatch('deleteLike', payload)
-        : axios.post('https://us-central1-apirest-808ed.cloudfunctions.net/posters/poster', payload).then((data) => {
+        : axios.post('https://us-central1-pacientes-4d4bb.cloudfunctions.net/usuarios/usuario', payload).then((data) => {
             state.shows.forEach((s, index) => {
               s.id === id ? commit('MAKE_LIKE', [index, data.data]) : false
             })
-          })
-    },
+          })*/
+        },
     deleteLike({ commit, state }, data) {
       let indiceShows = state.shows.indexOf(data)
       console.log(state.favs)

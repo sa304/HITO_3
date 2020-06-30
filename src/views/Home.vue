@@ -41,6 +41,8 @@ export default {
   methods: {
     ...mapActions(["setShows", "makeLike", "setFavs"])
   },
+
+  
   created() {
     if (this.shows.length === 0) {
       axios.get("http://api.tvmaze.com/shows").then(data => {
@@ -54,24 +56,9 @@ export default {
             summary: s.summary,
             like: false
           });
+        this.setShows(shows)
         });
 
-        axios
-          .get(
-            "https://us-central1-pacientes-4d4bb.cloudfunctions.net/posters/posters/" // path: posters/posters
-          )
-          .then(data => {
-            let favs = data.data;
-            this.setFavs(favs);
-            shows.forEach((s, i) => {
-              let fav = favs.find(f => f.data.id == s.id);
-              fav ? (shows[i] = fav.data) : false;
-            });
-
-            console.log("Shows => ", shows);
-
-            this.setShows(shows);
-          });
       });
     }
   },

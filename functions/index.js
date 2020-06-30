@@ -6,33 +6,35 @@ const cors = require('cors')
 const router = express();
 router.use(cors({ origin: true }))
 
-router.get("/posters", async (req, res) => {
-  const posters = await admin
+router.get("/usuario/:id", async (req, res) => {
+  const postersFavoritos = await admin
     .firestore()
-    .collection("posters")
-    .get();
-  var lista = [];
-  posters.docs.forEach(doc => {
-    lista.push({ id: doc.id, data: doc.data() });
-  });
-  res.send(lista);
+    .collection("usuarios")
+    .doc(req.params.id)
+    .get()
+    .then(function (doc) {
+      if (doc.exists) {
+        return doc.data()
+        console.log("Document data:", doc.data());
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    })
+  res.send(postersFavoritos);
 });
-router.post("/poster", async (req, res) => {
+router.post("/usuario", async (req, res) => {
   const poster = await admin
     .firestore()
-    .collection("posters")
-    .add(req.body)
-    .then(docRef => {
-      return docRef.id
+    .collection("usuarios")
+    .doc(req.body.email)
+    .set(req.body.favoritos)
+    .then( (d)=> {
+      return d
+    }).catch(e => {
+      return e
     });
   res.send(poster);
 });
-router.delete("/poster/:id", async (req, res) => {
-  const poster = await admin
-    .firestore()
-    .collection("posters")
-    .doc(req.params.id)
-    .delete();
-  res.send(poster);
-});
-exports.posters = functions.https.onRequest(router);
+
+exports.usuarios = functions.https.onRequest(router);
