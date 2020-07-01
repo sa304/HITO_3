@@ -13,5 +13,3 @@ export default FirebaseConfig
 //usuario@gmail.com
 
 //123456
-
-//LISTO
